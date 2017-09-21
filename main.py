@@ -30,28 +30,38 @@ form="""
         <!--Create your text here-->
         <form action="submit" id="textform" methods="post">
         <label for= "rot">Rotate by:</label> 
-        <input id= "rot" type="text" id= "rot" name="rot"></input>
-        <textarea name="text">Type text here!</textarea>
-        <input type="submit" id="rot" name="rot">
+        <input type "text" name="rot" value= "0"></input>
+        <textarea type= "text" name="text">Type text here!</textarea>
+        <input type="submit">
 
         </body>
     </html>
 """
 
+
+
 @app.route("/") #, method=['POST'])
 def blank_form():
-    return form
+    text = request.form['text']
+    rot = request.form['rot']
+    new_message=rotate_string(text,rot)
+    return new_form
+
 
 #@app.route('/submit')
 #def encrypt():
     #
 
 
-@app.route("/submit")
-def encrypt():
-    text = request.form['text']
-    rot = request.form['rot']
-    message =rotate_string(text,rot)
-    return message
+#@app.route("/submit")
+#def encrypt():
+    #text = request.form['text']
+    #rot = request.form['rot']
+    #new_message=rotate_string(text,rot)
+    #return <h1>message</h1>
+    #text = request.form['text']
+    #rot = request.form['rot']
+    #message =rotate_string(text,rot)
+    #return message
 
 app.run()
