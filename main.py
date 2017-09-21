@@ -42,8 +42,8 @@ form="""
 
 @app.route("/") #, method=['POST'])
 def blank_form():
-    text = request.form['text']
-    rot = request.form['rot']
+    get_text = request.form['text']
+    get_rot = request.form['rot']
     new_message=rotate_string(text,rot)
     return new_form
 
