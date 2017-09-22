@@ -31,7 +31,7 @@ form="""
         <form method="post">
         <form action="submit" id="textform" methods="post">
         <label for= "rot">Rotate by:</label> 
-        <input min = "0" max ="1000" type= "number" name="rot" value= "0" methods="post"></input>
+        <input min = "0" max ="26" type= "number" name="rot" value= "0" methods="post"></input>
         <textarea type= "text" name="text" methods="post">{0}</textarea>
         <br>
         <input type="submit">
